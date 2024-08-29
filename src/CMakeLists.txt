@@ -6,6 +6,13 @@ set(VERSION 1.0.5)
 
 set(CMAKE_C_STANDARD 99)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(ZLIB REQUIRED)
+    set(zlib_target ZLIB::ZLIB)
+else()
+    set(zlib_target zlib)
+endif()
+
 add_library(pplib_utils STATIC
     util/utilplat.h
     util/utilcryptdef.h
@@ -42,7 +49,7 @@ target_include_directories(pplib_utils PUBLIC
 target_link_libraries(pplib_utils
     PUBLIC
         m
-        zlib
+        ${zlib_target}
 )
 
 add_library(pplib_filters STATIC
@@ -63,7 +70,7 @@ target_include_directories(pplib_filters PUBLIC
 target_link_libraries(pplib_filters
     PUBLIC
         m
-        zlib
+        ${zlib_target}
 )
 
 add_library(pplib
