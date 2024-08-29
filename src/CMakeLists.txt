@@ -138,9 +138,10 @@ set_target_properties(pplib
 
 add_library(pplib::pplib ALIAS pplib)
 
+include(GNUInstallDirs)
+
 install(TARGETS pplib
     EXPORT pplib
-    DESTINATION lib
 )
 
 enable_testing()
