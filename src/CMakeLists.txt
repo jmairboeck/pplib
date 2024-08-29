@@ -126,7 +126,7 @@ endif (MSVC)
 
 set_target_properties(pplib
     PROPERTIES
-        PUBLIC_HEADER "ppapi.h;ppconf.h;pplib.h"
+        PUBLIC_HEADER "ppapi.h;ppconf.h;pplib.h;pparray.h;ppcrypt.h;ppdict.h;ppfilter.h;ppheap.h;ppload.h;ppstream.h;ppxref.h;util/utilplat.h;util/utilcryptdef.h;util/utildecl.h;util/utilcrypt.h;util/utiliof.h;util/utillog.h;util/utilmd5.h;util/utilmem.h;util/utilmemheap.h;util/utilmemheapiof.h;util/utilmeminfo.h;util/utilnumber.h;util/utilsha.h;util/utilbasexx.h;util/utilflate.h;util/utilfpred.h;util/utillzw.h;util/utilmemallc.h;util/utilmemallh.h"
 )
 
 add_library(pplib::pplib ALIAS pplib)
